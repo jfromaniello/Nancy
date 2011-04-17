@@ -3,8 +3,7 @@ namespace Nancy.Tests.Unit.ContentNegotiation
     using System.Collections.Generic;
     using System.IO;
     using FakeItEasy;
-    using Nancy.ContentNegotiation;
-    using Nancy.ContentNegotiation.DefaultResponder;
+    using Nancy.ContentNegotiation.DefaultResponders;
     using Nancy.IO;
     using Nancy.Responses;
     using Xunit;

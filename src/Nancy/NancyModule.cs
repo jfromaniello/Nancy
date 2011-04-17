@@ -4,6 +4,7 @@ namespace Nancy
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.IO;
+    using ContentNegotiation;
     using ModelBinding;
     using Nancy.Routing;
     using Nancy.Session;
@@ -166,6 +167,12 @@ namespace Nancy
         /// </summary>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public IModelBinderLocator ModelBinderLocator { get; set; }
+
+        /// <summary>
+        /// Gets or sets the content negotiator
+        /// </summary>
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public IContentNegotiator ContentNegotiator { get; set; }
 
         /// <summary>
         /// Helper class for configuring a route handler in a module.

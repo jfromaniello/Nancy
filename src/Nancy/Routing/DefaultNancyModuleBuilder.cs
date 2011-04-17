@@ -1,5 +1,6 @@
 ﻿namespace Nancy.Routing
 {
+    using ContentNegotiation;
     using ModelBinding;
     using Nancy.ViewEngines;
 
@@ -11,6 +12,7 @@
         private readonly IViewFactory viewFactory;
         private readonly IResponseFormatter responseFormatter;
         private readonly IModelBinderLocator modelBinderLocator;
+        private readonly IContentNegotiator contentNegotiator;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DefaultNancyModuleBuilder"/> class.
@@ -18,11 +20,13 @@
         /// <param name="viewFactory">The <see cref="IViewFactory"/> instance that should be assigned to the module.</param>
         /// <param name="responseFormatter">An <see cref="DefaultResponseFormatter"/> instance that should be assigned to the module.</param>
         /// <param name="modelBinderLocator">A <see cref="IModelBinderLocator"/> instance that should be assigned to the module.</param>
-        public DefaultNancyModuleBuilder(IViewFactory viewFactory, IResponseFormatter responseFormatter, IModelBinderLocator modelBinderLocator)
+        /// <param name="contentNegotiator">A <see cref="IContentNegotiator"/> instance that should be assigned to the module.</param>
+        public DefaultNancyModuleBuilder(IViewFactory viewFactory, IResponseFormatter responseFormatter, IModelBinderLocator modelBinderLocator, IContentNegotiator contentNegotiator)
         {
             this.viewFactory = viewFactory;
             this.responseFormatter = responseFormatter;
             this.modelBinderLocator = modelBinderLocator;
+            this.contentNegotiator = contentNegotiator;
         }
 
         /// <summary>
@@ -37,7 +41,7 @@
             module.Response = this.responseFormatter;
             module.ViewFactory = this.viewFactory;
             module.ModelBinderLocator = this.modelBinderLocator;
-
+            module.ContentNegotiator = this.contentNegotiator;
             return module;
         }
     }

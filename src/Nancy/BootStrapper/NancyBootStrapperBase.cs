@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using ContentNegotiation;
     using ModelBinding;
     using Nancy.Routing;
     using Nancy.Extensions;
@@ -131,6 +132,16 @@
         protected virtual Type DefaultFieldNameConverter { get { return typeof(DefaultFieldNameConverter); } }
 
         /// <summary>
+        /// Type passed into RegisterDefaults - override this to switch out default implementations
+        /// </summary>
+        protected virtual Type DefaultContentNegotiationDefaults { get { return typeof (ContentNegotiationDefaults); } }
+
+        /// <summary>
+        /// Type passed into RegisterDefaults - override this to switch out default implementations
+        /// </summary>
+        protected virtual Type DefaultContentNegotiator { get { return typeof(DefaultContentNegotiator); } }
+        
+        /// <summary>
         /// <para>
         /// The pre-request hook
         /// </para>
@@ -213,6 +224,8 @@
                 new TypeRegistration(typeof(IBinder), this.DefaultBinder), 
                 new TypeRegistration(typeof(BindingDefaults), DefaultBindingDefaults), 
                 new TypeRegistration(typeof(IFieldNameConverter), DefaultFieldNameConverter), 
+                new TypeRegistration(typeof(ContentNegotiationDefaults), DefaultContentNegotiationDefaults), 
+                new TypeRegistration(typeof(IContentNegotiator), DefaultContentNegotiator), 
             };
         }
 

@@ -48,10 +48,14 @@
     </Compile>
     <Compile Include="Bootstrapper\AppDomainAssemblyTypeScanner.cs" />
     <Compile Include="Bootstrapper\IApplicationPipelines.cs" />
-    <Compile Include="ContentNegotiation\DefaultResponder\JsonResponder.cs" />
+    <Compile Include="ContentNegotiation\DefaultContentNegotiator.cs" />
+    <Compile Include="ContentNegotiation\ContentNegotiationDefaults.cs" />
+    <Compile Include="ContentNegotiation\DefaultResponders\JsonResponder.cs" />
+    <Compile Include="ContentNegotiation\IContentNegotiator.cs" />
     <Compile Include="ContentNegotiation\IResponder.cs" />
+    <Compile Include="ContentNegotiation\ModuleExtensions.cs" />
     <Compile Include="ContentNegotiation\ResponseExtensions.cs" />
-    <Compile Include="ContentNegotiation\DefaultResponder\XmlResponder.cs" />
+    <Compile Include="ContentNegotiation\DefaultResponders\XmlResponder.cs" />
     <Compile Include="Cryptography\Base64Helpers.cs" />
     <Compile Include="Cryptography\DefaultHmacProvider.cs" />
     <Compile Include="Cryptography\HmacComparer.cs" />

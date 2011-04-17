@@ -1,4 +1,4 @@
-﻿namespace Nancy.ContentNegotiation.DefaultResponder
+﻿namespace Nancy.ContentNegotiation.DefaultResponders
 {
     using Nancy.Responses;
 

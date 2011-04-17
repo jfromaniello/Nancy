@@ -4,8 +4,7 @@
     using System.IO;
     using System.Xml.Serialization;
     using FakeItEasy;
-    using Nancy.ContentNegotiation;
-    using Nancy.ContentNegotiation.DefaultResponder;
+    using Nancy.ContentNegotiation.DefaultResponders;
     using Nancy.IO;
     using Xunit;
 
