@@ -5,6 +5,7 @@
     using System.Xml.Serialization;
     using FakeItEasy;
     using Nancy.ContentNegotiation;
+    using Nancy.ContentNegotiation.DefaultResponder;
     using Nancy.IO;
     using Xunit;
 

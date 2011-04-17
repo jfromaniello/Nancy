@@ -1,6 +1,5 @@
-namespace Nancy.ContentNegotiation
+﻿namespace Nancy.ContentNegotiation.DefaultResponder
 {
-    using System;
     using Responses;
 
     public class JsonResponder : IResponder

@@ -1,7 +1,6 @@
-﻿namespace Nancy.ContentNegotiation
+﻿namespace Nancy.ContentNegotiation.DefaultResponder
 {
-    using System;
-    using Responses;
+    using Nancy.Responses;
 
     public class XmlResponder : IResponder
     {
