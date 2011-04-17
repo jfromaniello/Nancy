@@ -4,16 +4,16 @@
     using System.IO;
     using Nancy.Json;
 
-    public class JsonResponse<TModel> : Response
+    public class JsonResponse : Response
     {
-        public JsonResponse(TModel model)
+        public JsonResponse(Type modelType, object model)
         {
             this.Contents = GetJsonContents(model);
             this.ContentType = "application/json";
             this.StatusCode = HttpStatusCode.OK;
         }
-     
-        private static Action<Stream> GetJsonContents(TModel model)
+
+        private static Action<Stream> GetJsonContents(object model)
         {
             return stream =>
             {
@@ -26,5 +26,10 @@
                 writer.Flush();
             };
         }
+    }
+    public class JsonResponse<TModel> : JsonResponse
+    {
+        public JsonResponse(TModel model) : base(typeof(TModel), model)
+        {}
     }
 }
