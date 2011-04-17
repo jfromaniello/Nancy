@@ -48,6 +48,9 @@
     </Compile>
     <Compile Include="Bootstrapper\AppDomainAssemblyTypeScanner.cs" />
     <Compile Include="Bootstrapper\IApplicationPipelines.cs" />
+    <Compile Include="ContentNegotiation\IResponder.cs" />
+    <Compile Include="ContentNegotiation\ResponseExtensions.cs" />
+    <Compile Include="ContentNegotiation\XmlResponder.cs" />
     <Compile Include="Cryptography\Base64Helpers.cs" />
     <Compile Include="Cryptography\DefaultHmacProvider.cs" />
     <Compile Include="Cryptography\HmacComparer.cs" />
