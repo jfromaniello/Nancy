@@ -46,6 +46,7 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="CustomResponder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="TestModel.cs" />
     <Compile Include="TestModule.cs" />
